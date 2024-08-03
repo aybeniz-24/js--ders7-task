@@ -14,7 +14,20 @@
         const ntc2 = document.querySelector("#ntc2")
         const list = ['emma', 'liam', 'olivia', 'noah', 'ava', 'william', 'sophia', 'jackson']
            
-       
+       for (let i = 0; i < list.length; i++) {
+            ntc1.innerHTML = list 
+        for (let j = 1; j <= list[i].length; j++) {
+            if ( j == 1){
+                let herf = list[i][0].toUpperCase() + list[i].slice(1)
+              ntc2.innerHTML += herf + ", "
+               
+            }
+            
+            
+        }
+           
+           
+       }
         
     </script>
 </body>
