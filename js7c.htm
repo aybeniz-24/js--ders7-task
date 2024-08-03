@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+            li{
+                padding: 5px 0;
+            }
+            li > input{
+                width: 30px;
+                text-align: right;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="add()">+</button>
+       <ul id="inp"> </ul>
+       <button onclick="hesabla()">=</button>
+       <h1 id="ntc"></h1>
+
+       <script>
+        const inp = document.querySelector("#inp")
+        const ntc = document.querySelector("#ntc")
+        let arr = 2
+
+        function add(){
+            arr++
+            show()
+        }
+        function show(){
+           let kod = ""
+            for (let i = 0; i < arr; i++) {
+                kod +=  ` <li> <input type="text" id="a${i}" /></li> `
+            }
+            inp.innerHTML = kod
+        }
+
+        function hesabla(){
+            let sum = 0
+            for (let i = 0; i < arr; i++) {
+                const input = document.querySelector(`#a${i}`);
+                sum += +input.value
+            }
+            ntc.innerHTML = sum
+        }
+    show()
+       </script>
+    </body>
+</html>

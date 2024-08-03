@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS7</title>
+    </head>
+    <body>
+        <ul id="qrup"></ul>
+        <script>
+            const qrup = document.querySelector("#qrup")
+           let arr = [ "Aybeniz", "Aygun", "Aynur", "Aytac" ]
+           let kod = ''
+           arr.push('Aysel')
+           arr[2] = 'Aybeniz'
+           arr[99] = 'Ayten'
+
+           delete arr[2]
+           arr.splice(2, 1, 'esli', 'aysen' )
+           arr.splice(6,94)
+           console.log(arr.slice(2,5));
+
+           for (let i = 0; i < arr.length; i++) {
+            if (arr[i]) kod += `<li>${ arr[i]}</li>`
+           }
+           qrup.innerHTML = kod
+        </script>
+    </body>
+</html>

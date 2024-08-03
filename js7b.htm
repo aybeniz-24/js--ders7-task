@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js7b</title>
+</head>
+<body>
+    <input type="date" id="tarix" />
+    <input type="text" id="ish" />
+    <button onclick="yaz()">+</button>
+
+
+    <ul id="list"></ul>
+
+    <script>
+        const tarix = document.querySelector("#tarix")
+        const ish = document.querySelector("#ish")
+        const list = document.querySelector("#list")
+        let task = []
+
+        function yaz(){
+            task.push(`${tarix.value} - ${ish.value}`)
+            goster()
+            // list.innerHTML += 
+            // `
+            //     <li>
+            //         ${tarix.value} - ${ish.value}
+            //         <button onclick="sil()">X</button>
+            //     </li>
+            // `
+            // tarix.value = ''
+            // ish.value = ''
+        }
+
+        function sil(i){
+            task.splice(i, 1)
+            goster()
+        }
+
+        function goster(){
+            let kod = ''
+            for (let i = 0; i < task.length; i++) {
+              kod += `  
+              <li>
+                    ${task[i]}<button onclick="sil(${i})">X</button>
+             </li>`
+                
+            }
+            list.innerHTML = kod 
+            tarix.value = ''
+            ish.value = ''
+        }
+    </script>
+</body>
+</html>

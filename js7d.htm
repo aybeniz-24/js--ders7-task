@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            input {
+                width: 20px;
+                margin: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="form"></form>
+        <button onclick="go()">=</button>
+        <p id="cixis"></p>
+
+        <script>
+            const form = document.querySelector("#form")
+            const cixis = document.querySelector("#cixis")
+            
+            for (let i = 0; i <= 8; i++) {
+                form.innerHTML += `<input type="checkbox" id="a${i}" />`
+            }
+
+            function go() {
+                let count = ""
+                const a = document.querySelectorAll("input[type='checkbox']")
+
+                for (let i = 0; i < a.length; i++) {
+                    if (a[i].checked) {
+                        count += "1"
+                    } else {
+                        count += "0"
+                    }
+                }
+                cixis.innerHTML = count
+            }
+        </script>
+    </body>
+</html>

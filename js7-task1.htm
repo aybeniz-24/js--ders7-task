@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Task-1</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            #boyuk {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 200px;
+            background-color: #888;
+            border-radius: 15px;
+        }
+        #kicik {
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="boyuk">
+            <p id="cixis"></p>
+            <div id="kicik"></div>
+            <button onclick="sec()">Random Reng</button>
+        </div>
+
+
+        <script>
+            const body = document.querySelector("body")
+            const boyuk = document.querySelector("#boyuk")
+            const kicik = document.querySelector("#kicik")
+            const cixis = document.querySelector("#cixis")
+
+            function rand(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function sec(){
+            let reng = `${rand(0, 255)},${rand(0, 255)}, ${rand(0, 255)}`
+
+            kicik.style.backgroundColor = `rgb(${reng})`
+            body.style.backgroundColor = `rgb(${reng})`
+        }
+        </script>
+    </body>
+</html>
